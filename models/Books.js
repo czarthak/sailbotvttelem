@@ -5,11 +5,11 @@ const mongoose = require('mongoose');
 const BookSchema = new mongoose.Schema({
   s1: {
     type: String,
-    required: true
+    required: false
   },
   s2: {
     type: String,
-    required: true
+    required: false
   }
 });
 
