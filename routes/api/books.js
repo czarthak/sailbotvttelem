@@ -18,7 +18,7 @@ router.get('/test', (req, res) => res.send('sensor route testing!'));
 router.get('/', (req, res) => {
   Sensor.find()
     .then(books => res.json(books))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Records found' }));
+    .catch(err => res.status(404).json({ error: 'No Records found' }));
 });
 
 // @route   GET api/five
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 router.get('/five', (req, res) => {
   Sensor.find().sort({ createdAt: -1 }).limit(5)
     .then(books => res.json(books))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Records found' }));
+    .catch(err => res.status(404).json({ error: 'No Records found' }));
 });
 
 // @route   GET api/latest
@@ -39,7 +39,7 @@ router.get('/latest', (req, res) => {
       if (book) {
         res.json(book);
       } else {
-        res.status(404).json({ nobookfound: 'No Records found' });
+        res.status(404).json({ error: 'No Records found' });
       }
     })
     .catch(err => res.status(404).json({ error: 'Unable to find the record' }));
@@ -51,7 +51,7 @@ router.get('/latest', (req, res) => {
 router.get('/:id', (req, res) => {
   Sensor.findById(req.params.id)
     .then(book => res.json(book))
-    .catch(err => res.status(404).json({ nobookfound: 'No Records found' }));
+    .catch(err => res.status(404).json({ error: 'No Records found' }));
 });
 
 // @route   POST api
