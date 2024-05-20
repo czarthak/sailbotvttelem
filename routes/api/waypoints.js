@@ -6,7 +6,7 @@ var size = 0;
 
 let oneSize = 0;
 let twoSize = 0;
-MAX_SIZE = 2;
+MAX_SIZE = 20;
 
 // Load Waypoint model
 const Waypoint = require('../../models/Waypoints');
