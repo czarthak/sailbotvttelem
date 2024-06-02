@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 var size = 0;
-const MAX_SIZE = 2000;
+const MAX_SIZE = 1;
 // Load Sensor model
 const Sensor = require('../../models/Books');
 
